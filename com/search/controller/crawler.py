@@ -47,6 +47,14 @@ def add_page_to_index(index, url, content):
         add_to_index(index, word, url)
 
 
+def get_page(url):
+    try:
+        import urllib
+        return urllib.urlopen(url).read()
+    except:
+        return ""
+
+
 def crawl_web(seed):
     tocrawl = [seed]
     crawled = []
